@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
             // Delay transition to sign-in page after animations complete
             //handler.postDelayed({
-                //startActivity(Intent(this@MainActivity, Login::class.java))
+                //startActivity(Intent(this@MainActivity, Login::class.java)) //Takes to whatever page you want next
                 //finish()
             //}, rotationDuration + moveUpDuration)
         }
