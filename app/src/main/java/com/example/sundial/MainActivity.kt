@@ -13,6 +13,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlinx.coroutines.Delay
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,11 +58,10 @@ class MainActivity : AppCompatActivity() {
                 override fun onAnimationRepeat(animation: Animation?) {}
             })
 
-            // Delay transition to sign-in page after animations complete
-            //handler.postDelayed({
-                //startActivity(Intent(this@MainActivity, Login::class.java)) //Takes to whatever page you want next
-                //finish()
-            //}, rotationDuration + moveUpDuration)
+            handler.postDelayed({
+                startActivity(Intent(this@MainActivity, LogIn::class.java))
+                finish()
+            }, rotationDuration + moveUpDuration)
         }
 
 }

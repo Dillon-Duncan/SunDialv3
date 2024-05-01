@@ -5,17 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LogIn">
+    tools:context=".SignUp">
 
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/edtEmail2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-280dp"
         android:autofillHints=""
         android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/edtPassword"
+        app:layout_constraintBottom_toTopOf="@+id/edtPassword2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,42 +25,60 @@
     </EditText>
 
     <EditText
-        android:id="@+id/edtPassword"
+        android:id="@+id/edtPassword2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:autofillHints=""
-        android:hint="@string/enter_password"
+        android:hint="@string/enter_password2"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="TouchTargetSizeCheck">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/edtConfirmPassword"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-280dp"
+        android:autofillHints=""
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPassword2"
         tools:ignore="TouchTargetSizeCheck">
 
     </EditText>
 
     <Button
-        android:id="@+id/btnProceed"
+        android:id="@+id/btnProceed2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-280dp"
-        android:text="@string/next"
+        android:layout_marginTop="-230dp"
+        android:text="@string/next2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/edtConfirmPassword" />
 
     <TextView
-        android:id="@+id/txtHeadingLogIn"
+        android:id="@+id/txtHeadingSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-140dp"
-        android:text="@string/log_in"
+        android:text="@string/sign_up"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/edtEmail"
+        app:layout_constraintBottom_toTopOf="@+id/edtEmail2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
