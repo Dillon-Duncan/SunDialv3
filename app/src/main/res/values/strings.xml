@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">SunDial</string>
     <string name="enter_email">Enter Email</string>
+    <string name="next">Next</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="log_in">Log In</string>
+    <string name="enter_password2">Enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="next2">Next</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in3">Log In</string>
+    <string name="sign_up3">Sign Up</string>
 </resources>
