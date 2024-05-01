@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             })
 
             handler.postDelayed({
-                startActivity(Intent(this@MainActivity, LogIn::class.java))
+                startActivity(Intent(this@MainActivity, LogInOrSignUp::class.java))
                 finish()
             }, rotationDuration + moveUpDuration)
         }
