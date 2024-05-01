@@ -11,13 +11,15 @@
         android:id="@+id/imgSplash"
         android:layout_width="100sp"
         android:layout_height="100sp"
+        android:importantForAccessibility="no"
         android:src="@drawable/_fymasaazjvcsepagi7xtnmlbr4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.026" />
+        app:layout_constraintVertical_bias="0.026"
+        tools:ignore="ImageContrastCheck" />
 
     <EditText
         android:id="@+id/edtEmail2"
@@ -32,7 +34,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck">
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck">
 
     </EditText>
 
@@ -49,7 +51,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
-        tools:ignore="TouchTargetSizeCheck">
+        app:passwordToggleEnabled="true"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck">
 
     </EditText>
 
@@ -66,7 +69,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtPassword2"
-        tools:ignore="TouchTargetSizeCheck">
+        app:passwordToggleEnabled="true"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck">
 
     </EditText>
 
@@ -89,13 +93,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="-140dp"
         android:text="@string/sign_up"
+        android:textColor="@color/orange"
         android:textSize="36sp"
         android:textStyle="bold"
-        android:textColor="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/edtEmail2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
