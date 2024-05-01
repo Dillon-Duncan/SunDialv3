@@ -17,7 +17,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintVertical_bias="0.025"
+        tools:ignore="ImageContrastCheck"
+        android:importantForAccessibility="no" />
 
     <EditText
         android:id="@+id/edtEmail"
@@ -32,7 +34,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck">
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck">
 
     </EditText>
 
@@ -48,7 +50,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck">
+        app:passwordToggleEnabled="true"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck">
 
     </EditText>
 
@@ -71,13 +74,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="-140dp"
         android:text="@string/log_in"
+        android:textColor="@color/orange"
         android:textSize="36sp"
         android:textStyle="bold"
-        android:textColor="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/edtEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
