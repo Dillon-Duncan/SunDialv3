@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#E4B082</color>
+    <color name="burnt_siena">#ED7015</color>
 </resources>

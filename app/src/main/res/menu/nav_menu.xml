@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+<item
+    android:id="@+id/itmAccount"
+    android:icon="@drawable/ic_account"
+    android:title="@string/menuAccount"/>
+<item
+    android:id="@+id/itmCategory"
+    android:icon="@drawable/ic_category"
+    android:title="@string/menuCategory"/>
+<item
+    android:id="@+id/itmTimeSheet"
+    android:icon="@drawable/ic_timesheet"
+    android:title="@string/menuTimeSheet"/>
+<item
+    android:id="@+id/itmWeeklyReport"
+    android:icon="@drawable/ic_report"
+    android:title="@string/menuWeeklyReport"/>
+<item
+    android:id="@+id/itmSettings"
+    android:icon="@drawable/ic_settings"
+    android:title="@string/menuSettings"/>
+
+    <item android:title="" android:enabled="false"/>
+    <item android:title="" android:enabled="false"/>
+    <item android:title="" android:enabled="false"/>
+    <item android:title="" android:enabled="false"/>
+    <item android:title="" android:enabled="false"/>
+    <item android:title="" android:enabled="false"/>
+
+    <item
+    android:id="@+id/itmLogout"
+    android:icon="@drawable/ic_logout"
+    android:title="@string/menuLogout"/>
+</menu>

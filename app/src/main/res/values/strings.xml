@@ -10,4 +10,13 @@
     <string name="sign_up">Sign Up</string>
     <string name="log_in3">Log In</string>
     <string name="sign_up3">Sign Up</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="username">John Doe</string>
+    <string name="menuAccount">Account</string>
+    <string name="menuCategory">Category</string>
+    <string name="menuTimeSheet">TimeSheet</string>
+    <string name="menuWeeklyReport">Weekly Report</string>
+    <string name="menuSettings">Settings</string>
+    <string name="menuLogout">Log Out</string>
+
 </resources>
