@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#E4B082</color>
     <color name="burnt_siena">#ED7015</color>
+    <color name="grey">#FF302E2C</color>
+    <color name="off_white">#FFFDF6FE</color>
 </resources>

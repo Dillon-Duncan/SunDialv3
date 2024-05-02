@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="-140dp"
         android:text="@string/log_in"
-        android:textColor="@color/orange"
+        android:textColor="#FDF6FE"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/edtEmail"
