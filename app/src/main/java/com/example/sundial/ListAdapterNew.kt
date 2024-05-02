@@ -22,11 +22,11 @@ class ListAdapterNew(private val timesheetlist : ArrayList<NewTimesheetClass>) :
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val currentItem = timesheetlist[position]
 
-        holder.category.text = currentItem.category
-        holder.description.text = currentItem.description
-        holder.date.text = currentItem.date
-        holder.startTime.text = currentItem.startTime
-        holder.endTime.text = currentItem.endTime
+        holder.category.text = "Category: " + currentItem.category
+        holder.description.text = "Description: " + currentItem.description
+        holder.date.text = "Date: " + currentItem.date
+        holder.startTime.text = "Time Started: " + currentItem.startTime
+        holder.endTime.text = "Time Finished: " + currentItem.endTime
     }
 
     class ListViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
