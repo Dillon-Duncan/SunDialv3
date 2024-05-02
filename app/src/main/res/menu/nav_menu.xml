@@ -4,21 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn = "navigation_view">
 <item
-    android:id="@+id/itmAccount"
-    android:icon="@drawable/ic_account"
-    android:title="@string/menuAccount"/>
+    android:title="@string/menuMain">
+    <menu >
+        <item
+            android:title="@string/menuDashboard"
+            android:id="@+id/itmDashboard"
+            android:icon="@drawable/ic_dashboard"/>
+        <item
+            android:title="@string/menuAccount"
+            android:id="@+id/itmAccount"
+            android:icon="@drawable/ic_account"/>
+    </menu>
+</item>
 <item
-    android:id="@+id/itmCategory"
-    android:icon="@drawable/ic_category"
-    android:title="@string/menuCategory"/>
+    android:title="@string/menuCategories">
+    <menu >
+        <item
+            android:title="@string/menuAddCategory"
+            android:id="@+id/itmAddCategory"
+            android:icon="@drawable/ic_add_category"/>
+    </menu>
+
+</item>
+
 <item
-    android:id="@+id/itmTimeSheet"
     android:icon="@drawable/ic_timesheet"
-    android:title="@string/menuTimeSheet"/>
-<item
-    android:id="@+id/itmWeeklyReport"
-    android:icon="@drawable/ic_report"
-    android:title="@string/menuWeeklyReport"/>
+    android:title="@string/menuTimeSheet">
+    <menu>
+        <item android:id="@+id/itmAddTimeSheet"
+            android:icon="@drawable/ic_add_timesheet"
+            android:title="@string/menuAddTimeSheet" />
+        <item
+            android:id="@+id/itmViewTimeSheetEntries"
+            android:icon="@drawable/ic_report"
+            android:title="@string/menuViewEntries"/>
+    </menu>
+</item>
+    <item android:title="" android:enabled="false"/>
 <item
     android:id="@+id/itmSettings"
     android:icon="@drawable/ic_settings"
