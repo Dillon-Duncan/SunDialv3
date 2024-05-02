@@ -7,30 +7,99 @@
     android:layout_height="match_parent"
     tools:context=".Dashboard">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:padding="10dp"
+            android:text="@string/dashboard"
+            android:textAlignment="center"
+            android:textColor="@color/burnt_siena"
+            android:textSize="65sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/dashboardLayout"
+            android:layout_width="410dp"
+            android:layout_height="450dp"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/timesheetList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnAddTimesheet2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-100dp"
+            android:layout_marginEnd="-200dp"
+            android:text="Add Timesheet"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dashboardLayout" />
+
+        <Button
+            android:id="@+id/btnAddCategory2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-200dp"
+            android:layout_marginTop="-100dp"
+            android:text="Add Category"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dashboardLayout" />
+
+        <Button
+            android:id="@+id/btnRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Refresh"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnAddTimesheet2"
+            app:layout_constraintStart_toEndOf="@+id/btnAddCategory2"
+            app:layout_constraintTop_toBottomOf="@+id/dashboardLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="@string/dashboard"
-            android:textSize= "65sp"
-            android:textAlignment="viewEnd"
-            android:padding="10dp"
-            android:textStyle="bold"
-            android:textColor="@color/burnt_siena" />
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav_view"
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            android:visibility="visible"
             app:headerLayout="@layout/nav_header"
             app:menu="@menu/nav_menu"
-            android:fitsSystemWindows="true"
-            />
+            tools:visibility="visible" />
 
     </RelativeLayout>
 
