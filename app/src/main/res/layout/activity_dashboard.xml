@@ -96,10 +96,10 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
-            android:visibility="gone"
+            android:visibility="visible"
             app:headerLayout="@layout/nav_header"
             app:menu="@menu/nav_menu"
-            tools:visibility="gone" />
+            tools:visibility="visible" />
 
     </RelativeLayout>
 
