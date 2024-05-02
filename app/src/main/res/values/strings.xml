@@ -13,15 +13,10 @@
     <string name="dashboard">Dashboard</string>
     <string name="username">John Doe</string>
     <string name="menuAccount">Account</string>
-    <string name="menuCategory">Categories</string>
-    <string name="new_category">Create New Time-Sheet Category</string>
-    <string name="view_category">View Categories</string>
-    <string name="menuTimeSheet">Time Sheets</string>
-    <string name="new_entry">Create New Time-Sheet Entry</string>
-    <string name="menuEntryReport">View Entry Reports</string>
+    <string name="menuCategory">Category</string>
+    <string name="menuTimeSheet">TimeSheet</string>
+    <string name="menuWeeklyReport">Weekly Report</string>
     <string name="menuSettings">Settings</string>
     <string name="menuLogout">Log Out</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
 
 </resources>

@@ -2,108 +2,37 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/DrwLayout"
+    android:id="@+id/drwLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Dashboard">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="@string/dashboard"
-            android:textAlignment="center"
-            android:textColor="@color/burnt_siena"
-            android:textSize="50sp"
-            android:textStyle="bold" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_height="2dp"
-            android:background="@color/black"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Today"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            />
-        <LinearLayout
-            android:id="@+id/dashTodayLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:layout_marginStart="28dp"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Admin "
-                android:textSize="20sp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Coding"
-                android:textSize="20sp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Market Research"
-                android:textSize="20sp"/>
-        </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yesterday"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            />
-        <LinearLayout
-            android:id="@+id/dashYesterdayLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:layout_marginStart="28dp"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Admin "
-                android:textSize="20sp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Coding"
-                android:textSize="20sp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Market Research"
-                android:textSize="20sp"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_menu"
-        android:fitsSystemWindows="true"
-        />
+        >
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@string/dashboard"
+            android:textSize= "65sp"
+            android:textAlignment="viewEnd"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/burnt_siena" />
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/nav_menu"
+            android:fitsSystemWindows="true"
+            />
+
+    </RelativeLayout>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

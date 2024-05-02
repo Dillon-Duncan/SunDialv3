@@ -8,32 +8,17 @@
     android:icon="@drawable/ic_account"
     android:title="@string/menuAccount"/>
 <item
-    android:title="@string/menuCategory">
-    <menu>
-        <item
-            android:id="@+id/itmNewCategory"
-            android:icon="@drawable/ic_add_category"
-            android:title="@string/new_category"/>
-        <item
-            android:id="@+id/itmViewCategories"
-            android:icon="@drawable/ic_category"
-            android:title="@string/view_category"/>
-    </menu>
-</item>
+    android:id="@+id/itmCategory"
+    android:icon="@drawable/ic_category"
+    android:title="@string/menuCategory"/>
 <item
-    android:title="@string/menuTimeSheet">
-    <menu >
-        <item
-            android:id="@+id/itmAddTimeSheetEntry"
-            android:icon="@drawable/ic_new_entry"
-            android:title="@string/new_entry"/>
-        <item
-            android:id="@+id/itmEntryReports"
-            android:icon="@drawable/ic_report"
-            android:title="@string/menuEntryReport"/>
-    </menu>
-</item>
-    <item android:title="" android:enabled="false"/>
+    android:id="@+id/itmTimeSheet"
+    android:icon="@drawable/ic_timesheet"
+    android:title="@string/menuTimeSheet"/>
+<item
+    android:id="@+id/itmWeeklyReport"
+    android:icon="@drawable/ic_report"
+    android:title="@string/menuWeeklyReport"/>
 <item
     android:id="@+id/itmSettings"
     android:icon="@drawable/ic_settings"
