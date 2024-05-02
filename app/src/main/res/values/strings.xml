@@ -12,10 +12,20 @@
     <string name="sign_up3">Sign Up</string>
     <string name="dashboard">Dashboard</string>
     <string name="username">John Doe</string>
-    <string name="menuAccount">Account</string>
-    <string name="menuCategory">Category</string>
-    <string name="menuTimeSheet">TimeSheet</string>
-    <string name="menuWeeklyReport">Weekly Report</string>
+    <string name="menuMain">Profile</string>
+    <string name="toolbarDashboard" formatted="true">Dashboard</string>
+    <string name="menuDashboard">Dashboard</string>
+    <string name="menuAccount">Account Details</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="btnAddCategory">Add Category</string>
+    <string name="btnAddTimeSheet">Add TimeSheet</string>
+    <string name="btnRefresh">Refresh</string>
+    <string name="menuCategories">Categories</string>
+    <string name="menuAddCategory">Add Time-Sheet Category</string>
+    <string name="menuTimeSheet">Time-Sheets</string>
+    <string name="menuAddTimeSheet">Add Time-Sheet Entry</string>
+    <string name="menuViewEntries">View Time-Sheet Entries</string>
     <string name="menuSettings">Settings</string>
     <string name="menuLogout">Log Out</string>
 
