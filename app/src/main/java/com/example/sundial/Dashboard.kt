@@ -15,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -92,7 +93,7 @@ class Dashboard : AppCompatActivity() {
                 R.id.itmViewTimeSheetEntries -> {intent = Intent(this, ViewTimesheetEntries::class.java)
                     startActivity(intent) }
                 R.id.itmSettings -> Toast.makeText(applicationContext, "Open Settings Layout", Toast.LENGTH_SHORT).show()
-                R.id.itmLogout -> Toast.makeText(applicationContext, "Log User Out", Toast.LENGTH_SHORT).show()
+                R.id.itmLogout -> FirebaseAuth.getInstance().signOut()
 
             }
             true
