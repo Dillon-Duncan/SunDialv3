@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountDetails">
+
+    <ImageView
+        android:id="@+id/imgSplash"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/_fymasaazjvcsepagi7xtnmlbr4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026"
+        tools:ignore="ImageContrastCheck" />
+
+    <EditText
+        android:id="@+id/edtEmail3"
+        android:layout_width="300dp"
+        android:layout_height="37dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/custom_input"
+        android:layout_marginBottom="-280dp"
+        android:autofillHints=""
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/edtPassword3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/edtPassword3"
+        android:layout_width="300dp"
+        android:layout_height="37dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/custom_input"
+        android:autofillHints=""
+        android:hint="@string/enter_password2"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:passwordToggleEnabled="true"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/btnChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-230dp"
+        android:text="Confirm Changes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPassword3"
+        app:layout_constraintVertical_bias="0.551" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

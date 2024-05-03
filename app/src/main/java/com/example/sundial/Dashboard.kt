@@ -35,6 +35,14 @@ class Dashboard : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_dashboard)
 
+        userRecyclerView = findViewById(R.id.timesheetList)
+        userRecyclerView.layoutManager = LinearLayoutManager(this)
+        userRecyclerView.setHasFixedSize(true)
+
+        list = arrayListOf<NewTimesheetClass>()
+
+        getUserData()
+
         val buttonClick = findViewById<Button>(R.id.btnAddCategory2)
         buttonClick.setOnClickListener {
             val intent = Intent(this, AddCategory::class.java)
@@ -50,13 +58,13 @@ class Dashboard : AppCompatActivity() {
         val buttonClick3 = findViewById<Button>(R.id.btnRefresh)
         buttonClick3.setOnClickListener {
 
-            userRecyclerView = findViewById(R.id.timesheetList)
+        /*    userRecyclerView = findViewById(R.id.timesheetList)
             userRecyclerView.layoutManager = LinearLayoutManager(this)
             userRecyclerView.setHasFixedSize(true)
 
             list = arrayListOf<NewTimesheetClass>()
 
-            getUserData()
+            getUserData() */
 
         }
 
