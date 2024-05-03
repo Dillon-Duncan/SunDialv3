@@ -93,7 +93,9 @@ class Dashboard : AppCompatActivity() {
                 R.id.itmViewTimeSheetEntries -> {intent = Intent(this, ViewTimesheetEntries::class.java)
                     startActivity(intent) }
                 R.id.itmSettings -> Toast.makeText(applicationContext, "Open Settings Layout", Toast.LENGTH_SHORT).show()
-                R.id.itmLogout -> FirebaseAuth.getInstance().signOut()
+                R.id.itmLogout -> { FirebaseAuth.getInstance().signOut()
+                    intent = Intent(this, MainActivity::class.java)
+                finish()}
 
             }
             true
