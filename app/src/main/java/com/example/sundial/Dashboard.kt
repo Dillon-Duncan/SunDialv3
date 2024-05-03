@@ -81,11 +81,16 @@ class Dashboard : AppCompatActivity() {
         navView.setNavigationItemSelectedListener {
             drwLayout.closeDrawer(GravityCompat.START)
             when(it.itemId) {
-                R.id.itmAccount -> Toast.makeText(applicationContext, "Open Account Details", Toast.LENGTH_SHORT).show()
-                R.id.itmAddCategory -> setContentView(R.layout.activity_add_category)
-                R.id.itmAddTimeSheet -> setContentView(R.layout.activity_add_timesheet)
-                R.id.itmDashboard -> setContentView(R.layout.activity_dashboard)
-                R.id.itmViewTimeSheetEntries -> Toast.makeText(applicationContext, "Open Time Sheet Entries", Toast.LENGTH_SHORT).show()
+                R.id.itmAccount -> {intent = Intent(this, AccountDetails::class.java)
+                startActivity(intent) }
+                R.id.itmAddCategory -> {intent = Intent(this, AddCategory::class.java)
+                    startActivity(intent) }
+                R.id.itmAddTimeSheet -> {intent = Intent(this, AddTimesheet::class.java)
+                    startActivity(intent) }
+                R.id.itmDashboard -> {intent = Intent(this, Dashboard::class.java)
+                    startActivity(intent) }
+                R.id.itmViewTimeSheetEntries -> {intent = Intent(this, ViewTimesheetEntries::class.java)
+                    startActivity(intent) }
                 R.id.itmSettings -> Toast.makeText(applicationContext, "Open Settings Layout", Toast.LENGTH_SHORT).show()
                 R.id.itmLogout -> Toast.makeText(applicationContext, "Log User Out", Toast.LENGTH_SHORT).show()
 

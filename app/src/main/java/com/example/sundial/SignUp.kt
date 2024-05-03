@@ -26,12 +26,21 @@ class SignUp : AppCompatActivity() {
             val email = findViewById<EditText>(R.id.edtEmail2).text.toString()
             val password = findViewById<EditText>(R.id.edtPassword2).text.toString()
             val confirmPassword = findViewById<EditText>(R.id.edtConfirmPassword).text.toString()
+            val username= findViewById<EditText>(R.id.edtUsername).text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()){
                 if (password == confirmPassword){
 
                     firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener{
                         if (it.isSuccessful){
+                            FirebaseAuth.getInstance().addAuthStateListener { firebaseUser ->
+                                if (firebaseUser!= null) {
+                                    val user = FirebaseAuth.getInstance().currentUser
+                                    var userdID = user?.uid
+                                    userdID = username
+                                }
+                            }
+
                             val intent = Intent(this, LogIn::class.java)
                             startActivity(intent)
                         } else

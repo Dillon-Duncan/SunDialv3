@@ -11,6 +11,7 @@
         android:id="@+id/imgSplash"
         android:layout_width="100sp"
         android:layout_height="100sp"
+        android:layout_marginBottom="-2500dp"
         android:importantForAccessibility="no"
         android:src="@drawable/_fymasaazjvcsepagi7xtnmlbr4"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,21 +23,58 @@
         tools:ignore="ImageContrastCheck" />
 
     <EditText
+        android:id="@+id/edtDisplayPicURL"
+        android:layout_width="300dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:background="@drawable/custom_input"
+        android:hint="Ener profile picture URL"
+        android:inputType="text"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPassword3"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/edtUsername2"
+        android:layout_width="300dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints=""
+        android:background="@drawable/custom_input"
+        android:hint="Ener Username"
+        android:inputType="text"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtEmail3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck">
+
+    </EditText>
+
+    <EditText
         android:id="@+id/edtEmail3"
         android:layout_width="300dp"
         android:layout_height="37dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:background="@drawable/custom_input"
-        android:layout_marginBottom="-280dp"
+        android:layout_marginBottom="20dp"
         android:autofillHints=""
+        android:background="@drawable/custom_input"
         android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         app:layout_constraintBottom_toTopOf="@+id/edtPassword3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck">
 
     </EditText>
@@ -45,12 +83,13 @@
         android:id="@+id/edtPassword3"
         android:layout_width="300dp"
         android:layout_height="37dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:background="@drawable/custom_input"
+        android:layout_marginTop="60dp"
         android:autofillHints=""
+        android:background="@drawable/custom_input"
         android:hint="@string/enter_password2"
         android:inputType="textPassword"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -66,13 +105,11 @@
         android:id="@+id/btnChange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-230dp"
+        android:layout_marginTop="20dp"
         android:text="Confirm Changes"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword3"
-        app:layout_constraintVertical_bias="0.551" />
+        app:layout_constraintTop_toBottomOf="@+id/edtDisplayPicURL" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

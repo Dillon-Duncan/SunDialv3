@@ -21,9 +21,19 @@ class AccountDetails : AppCompatActivity() {
 
         val email = user!!.email.toString()
         val password = "Inaccessible"
+        val username = user.uid.toString()
+        val profilePic = user.photoUrl.toString()
 
-        var emailText = findViewById<EditText>(R.id.edtEmail3)
-        var passwordtext = findViewById<EditText>(R.id.edtPassword3)
+        var emailText = findViewById<EditText>(R.id.edtEmail3).text
+        var passwordtext = findViewById<EditText>(R.id.edtPassword3).text
+        var usernametext = findViewById<EditText>(R.id.edtUsername2).text
+        var profilePictext = findViewById<EditText>(R.id.edtDisplayPicURL).text
+
+       /* emailText = email
+        passwordtext = password
+        usernametext = username
+        profilePictext = profilePic */
+
 
 
 
