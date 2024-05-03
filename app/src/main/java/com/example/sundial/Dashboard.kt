@@ -69,10 +69,10 @@ class Dashboard : AppCompatActivity() {
 
         }
 
-        val toolbar : Toolbar = findViewById(R.id.toolBar)
+        val toolbar : Toolbar = findViewById(R.id.toolBarDashboard)
         setSupportActionBar(toolbar)
 
-        drwLayout = findViewById(R.id.DrwLayout)
+        drwLayout = findViewById(R.id.DrwLayoutDashboard)
         toggle = ActionBarDrawerToggle(this, drwLayout, toolbar, R.string.open, R.string.close)
         drwLayout.addDrawerListener(toggle)
         toggle.syncState()
