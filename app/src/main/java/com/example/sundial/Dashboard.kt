@@ -92,6 +92,10 @@ class Dashboard : AppCompatActivity() {
                     startActivity(intent) }
                 R.id.itmViewTimeSheetEntries -> {intent = Intent(this, ViewTimesheetEntries::class.java)
                     startActivity(intent) }
+                R.id.itmAddDailyGoal -> {
+                    intent = Intent(this, DailyGoal::class.java)
+                    startActivity(intent)
+                }
                 R.id.itmSettings -> Toast.makeText(applicationContext, "Open Settings Layout", Toast.LENGTH_SHORT).show()
                 R.id.itmLogout -> { FirebaseAuth.getInstance().signOut()
                     intent = Intent(this, MainActivity::class.java)

@@ -26,6 +26,16 @@
     </menu>
 
 </item>
+    <item
+        android:title="@string/menuDailyGoal">
+        <menu >
+
+            <item  android:title="@string/toolbarSubAddDailyGoal"
+                android:id="@+id/itmAddDailyGoal"
+                android:icon="@drawable/ic_daily_goal" />
+        </menu>
+
+    </item>
 
 <item
     android:icon="@drawable/ic_timesheet"
@@ -49,9 +59,7 @@
     <item android:title="" android:enabled="false"/>
     <item android:title="" android:enabled="false"/>
     <item android:title="" android:enabled="false"/>
-    <item android:title="" android:enabled="false"/>
-    <item android:title="" android:enabled="false"/>
-    <item android:title="" android:enabled="false"/>
+
 
     <item
     android:id="@+id/itmLogout"

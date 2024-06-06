@@ -6,7 +6,7 @@
     </style>
     <style name="roundCorners" parent="" >
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">12dp</item>
+        <item name="cornerSize">17dp</item>
     </style>
     <style name="Theme.SunDial" parent="Base.Theme.SunDial" />
 </resources>

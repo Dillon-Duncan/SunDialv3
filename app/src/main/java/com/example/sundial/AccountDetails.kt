@@ -90,6 +90,11 @@ class AccountDetails : AppCompatActivity() {
                     startActivity(intent)
                 }
 
+                R.id.itmAddDailyGoal -> {
+                    intent = Intent(this, DailyGoal::class.java)
+                    startActivity(intent)
+                }
+
                 R.id.itmViewTimeSheetEntries -> {
                     intent = Intent(this, ViewTimesheetEntries::class.java)
                     startActivity(intent)
