@@ -4,6 +4,8 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.CalendarView
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
@@ -25,6 +27,8 @@ class DailyGoal : AppCompatActivity() {
     private lateinit var sBarMax: SeekBar
     private lateinit var sBarMinDisplay: TextView
     private lateinit var sBarMaxDisplay: TextView
+    private lateinit var btnConfirm: Button
+    private lateinit var calDailyGoal: CalendarView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -141,6 +145,25 @@ class DailyGoal : AppCompatActivity() {
             super.onConfigurationChanged(newConfig)
             toggle.onConfigurationChanged(newConfig)
         }
+
+        //private fun storeData(){
+          //   btnConfirm = findViewById(R.id.btnConfirm)
+          //  calDailyGoal = findViewById(R.id.calView)
+          //  btnConfirm.setOnClickListener{
+          //    val i: Int = 0
+          //  val j: Int = 0
+          //     for(i in j) {
+          //          for(j: Int = ){
+          //              val date: String = calDailyGoal.date.toString()
+          //              val hoursWorked: Int = sBarMax.progress - sBarMin.progress
+
+          //              val matrix = Array(i) {IntArray(j)}
+          //          }
+          //      }
+
+          //  }
+
+        //}
 
 
 
