@@ -4,14 +4,14 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.SeekBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -21,6 +21,10 @@ class DailyGoal : AppCompatActivity() {
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var drwLayout: DrawerLayout
     private lateinit var navView: NavigationView
+    private lateinit var sBarMin: SeekBar
+    private lateinit var sBarMax: SeekBar
+    private lateinit var sBarMinDisplay: TextView
+    private lateinit var sBarMaxDisplay: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,6 +90,8 @@ class DailyGoal : AppCompatActivity() {
                 }
                 true
             }
+
+        sBarProgressIndicator()
         }
 
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -96,10 +102,47 @@ class DailyGoal : AppCompatActivity() {
             }
         }
 
+        private fun sBarProgressIndicator(){
+            sBarMin = findViewById(R.id.sBarMinHours)
+            sBarMinDisplay = findViewById(R.id.sb_progress_min_indicator)
+            sBarMax = findViewById(R.id.sBarMaxHours)
+            sBarMaxDisplay = findViewById(R.id.sb_progress_max_indicator)
+
+           //on change listener to link with the display textview above to indicate position of seek bar for max hours.
+           sBarMin.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+               override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                  sBarMinDisplay.text = sBarMin.progress.toString()
+               }
+
+               override fun onStartTrackingTouch(seekBar: SeekBar?) {
+               }
+
+               override fun onStopTrackingTouch(seekBar: SeekBar?) {
+               }
+
+           })
+
+            //on change listener to link with the display textview above to indicate position of seek bar for max hours.
+           sBarMax.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+               override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                   sBarMaxDisplay.text = sBarMax.progress.toString()
+               }
+
+               override fun onStartTrackingTouch(seekBar: SeekBar?) {
+               }
+
+               override fun onStopTrackingTouch(seekBar: SeekBar?) {
+               }
+
+           })
+        }
+
         override fun onConfigurationChanged(newConfig: Configuration) {
             super.onConfigurationChanged(newConfig)
             toggle.onConfigurationChanged(newConfig)
         }
+
+
 
 
 }
