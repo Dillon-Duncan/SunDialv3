@@ -20,6 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
@@ -46,7 +47,7 @@
         <CalendarView
             android:id="@+id/calView"
             android:layout_width="325dp"
-            android:layout_height="220dp"
+            android:layout_height="310dp"
             android:layout_marginTop="23dp"
             app:layout_constraintTop_toBottomOf="@id/txtViewCalender"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,26 +75,37 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calView" />
 
+        <TextView
+            android:id="@+id/sb_progress_min_indicator"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="0"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:background="@color/buff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtMinHours" />
+
         <SeekBar
             android:id="@+id/sBarMinHours"
             android:progressDrawable="@drawable/sb_progress"
             android:thumb="@drawable/sb_thumb"
-            android:progress="5"
             android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:max="12"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="5dp"
             tools:layout_editor_absoluteX="94dp"
             tools:layout_editor_absoluteY="194dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtMinHours"/>
+            app:layout_constraintTop_toBottomOf="@+id/sb_progress_min_indicator"/>
 
         <TextView
             android:id="@+id/txtHint"
             android:layout_width="285dp"
             android:layout_height="40dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:textSize="13sp"
             android:minHeight="48dp"
@@ -110,7 +122,7 @@
             android:layout_width="286dp"
             android:layout_height="38dp"
             android:textSize="15sp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:minHeight="48dp"
             android:textStyle="bold"
@@ -122,11 +134,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtHint" />
 
+        <TextView
+            android:id="@+id/sb_progress_max_indicator"
+            android:layout_width="wrap_content"
+            android:text="0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:background="@color/buff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtMaxHours" />
+
         <SeekBar
             android:id="@+id/sBarMaxHours"
             android:progressDrawable="@drawable/sb_progress"
             android:thumb="@drawable/sb_thumb"
-            android:progress="5"
             android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:max="24"
@@ -134,14 +157,14 @@
             tools:layout_editor_absoluteY="194dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtMaxHours" />
+            app:layout_constraintTop_toBottomOf="@+id/sb_progress_max_indicator" />
 
         <Button
             android:id="@+id/btnConfirm"
             android:backgroundTint="@color/burnt_siena"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:text="Confirm"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
