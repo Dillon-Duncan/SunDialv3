@@ -2,10 +2,8 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/progress_bg"
-        android:height="550dp"
-        android:top="15dp"
-        android:bottom="15dp"
-        android:width="45dp"
+        android:height="55dp"
+        android:width="450dp"
         >
         <shape android:shape="rectangle" >
             <solid android:color="@color/orange"/>
@@ -14,14 +12,12 @@
     </item>
     <item
         android:id="@+id/progress_fill"
-        android:height="550dp"
-        android:top="45dp"
-        android:bottom="45dp"
-        android:width="45dp">
+        android:height="55dp"
+        android:width="450dp">
 
         <clip
-            android:clipOrientation="vertical"
-            android:gravity="top">
+            android:clipOrientation="horizontal"
+            android:gravity="start">
             <shape>
                 <solid android:color="@color/black"/>
                 <stroke android:width="1dp" android:color="@color/burnt_siena"/>
