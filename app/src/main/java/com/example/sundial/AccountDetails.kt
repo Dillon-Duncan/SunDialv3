@@ -49,9 +49,7 @@ class AccountDetails : AppCompatActivity() {
         profilePictext = profilePic */
 
 
-
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.DrwLayoutAccountDetails)) { v, insets ->
+        /* ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.DrwLayoutAccountDetails)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -128,6 +126,8 @@ class AccountDetails : AppCompatActivity() {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         toggle.onConfigurationChanged(newConfig)
+    } */
+
     }
 
 }
