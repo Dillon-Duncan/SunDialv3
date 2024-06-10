@@ -70,6 +70,10 @@ class AddCategory : AppCompatActivity() {
                 R.id.itmAddCategory -> intent = Intent(this, AddCategory::class.java)
                 R.id.itmAddTimeSheet -> intent = Intent(this, AddTimesheet::class.java)
                 R.id.itmDashboard -> intent = Intent(this, Dashboard::class.java)
+                R.id.itmAnalyticalGraph -> {
+                    intent = Intent(this, AnalyticsGraph::class.java)
+                    startActivity(intent)
+                }
                 R.id.itmViewTimeSheetEntries -> intent = Intent(this, ViewTimesheetEntries::class.java)
                 R.id.itmSettings -> Toast.makeText(applicationContext, "Open Settings Layout", Toast.LENGTH_SHORT).show()
                 R.id.itmLogout -> {

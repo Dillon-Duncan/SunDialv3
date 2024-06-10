@@ -1,10 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/DrwLayoutAnalyticsGraph"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AnalyticsGraph">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBarAnalyticalGraph"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Analytical Graph"
+                android:textAlignment="center"
+                android:textColor="@color/burnt_siena"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:id="@+id/mainGraphScreen"
+            android:layout_width="match_parent"
+            android:layout_height="560dp"
+            android:layout_marginTop="80dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="@+id/toolBarAnalyticalGraph">
+
+            <LinearLayout
+                android:id="@+id/mondayLayout"
+                android:layout_width="45dp"
+                android:layout_height="550dp"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+                <SeekBar
+                    android:id="@+id/mondayBarGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:rotation="270"
+                    android:progress="30"
+                    android:progressDrawable="@drawable/sb_graph_progress"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tuesdayLayout"
+                android:layout_width="45dp"
+                android:layout_height="550dp"
+                android:orientation="vertical"
+                android:layout_marginStart="67dp">
+
+                <SeekBar
+                    android:id="@+id/tuesdayBarGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:rotation="270"
+                    android:progress="30"
+                    android:progressDrawable="@drawable/sb_graph_progress"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/wednesdayLayout"
+                android:layout_width="45dp"
+                android:layout_height="550dp"
+                android:orientation="vertical"
+                android:layout_marginStart="122dp">
+
+                <SeekBar
+                    android:id="@+id/wednesdayBarGraph"
+                    android:layout_width="match_parent"
+                    android:progress="30"
+                    android:progressDrawable="@drawable/sb_graph_progress"
+                    android:layout_height="match_parent"
+                    android:rotation="270"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/thursdayLayout"
+                android:layout_width="45dp"
+                android:layout_height="550dp"
+                android:orientation="vertical"
+                android:layout_marginStart="177dp">
+
+                <SeekBar
+                    android:id="@+id/thursdayBarGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:progress="30"
+                    android:progressDrawable="@drawable/sb_graph_progress"
+                    android:rotation="270"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fridayLayout"
+                android:layout_width="45dp"
+                android:layout_height="550dp"
+                android:orientation="vertical"
+                android:layout_marginStart="233dp">
+
+                <SeekBar
+                    android:id="@+id/fridayBarGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:rotation="270"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/sb_graph_progress"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/saturdayLayout"
+                android:layout_width="45dp"
+                android:layout_height="550dp"
+                android:orientation="vertical"
+                android:layout_marginStart="288dp">
+
+                <SeekBar
+                    android:id="@+id/saturdayBarGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:rotation="270"
+                    android:progress="30"
+                    android:progressDrawable="@drawable/sb_graph_progress"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sundayLayout"
+                android:layout_width="45dp"
+                android:layout_height="550dp"
+                android:orientation="vertical"
+                android:layout_marginStart="343dp">
+
+                <SeekBar
+                    android:id="@+id/sundayBarGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:rotation="270"
+                    android:progress="30"
+                    android:progressDrawable="@drawable/sb_graph_progress"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/display_X_Axis"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/mainGraphScreen">
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view_analytical_graph"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/nav_header"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/nav_menu"/>
+</androidx.drawerlayout.widget.DrawerLayout>

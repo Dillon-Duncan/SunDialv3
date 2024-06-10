@@ -76,6 +76,10 @@ class AddTimesheet : AppCompatActivity() {
         when(it.itemId) {
             R.id.itmAccount -> {intent = Intent(this, AccountDetails::class.java)
                 startActivity(intent) }
+            R.id.itmAnalyticalGraph -> {
+                intent = Intent(this, AnalyticsGraph::class.java)
+                startActivity(intent)
+            }
             R.id.itmAddCategory -> {intent = Intent(this, AddCategory::class.java)
                 startActivity(intent) }
             R.id.itmAddTimeSheet -> {intent = Intent(this, AddTimesheet::class.java)

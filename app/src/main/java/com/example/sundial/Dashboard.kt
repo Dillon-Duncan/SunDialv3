@@ -56,7 +56,7 @@ class Dashboard : AppCompatActivity() {
         setupDrawerLayout(toolbar)
 
         // Set up NavigationView
-        navView = findViewById(R.id.nav_view)
+        navView = findViewById(R.id.nav_view_Dashboard)
         setupNavigationView()
     }
 
@@ -80,31 +80,32 @@ class Dashboard : AppCompatActivity() {
     }
 
     private fun setupNavigationView() {
-        navView.setNavigationItemSelectedListener { menuItem ->
-            drwLayout = findViewById(R.id.DrwLayoutDashboard)
+        navView = findViewById(R.id.nav_view_Dashboard)
+
+        navView.setNavigationItemSelectedListener {
             drwLayout.closeDrawer(GravityCompat.START)
-            val intent: Intent? = when (menuItem.itemId) {
-                R.id.itmAccount -> Intent(this, AccountDetails::class.java)
-                R.id.itmAddCategory -> Intent(this, AddCategory::class.java)
-                R.id.itmAddTimeSheet -> Intent(this, AddTimesheet::class.java)
-                R.id.itmDashboard -> Intent(this, Dashboard::class.java)
-                R.id.itmViewTimeSheetEntries -> Intent(this, ViewTimesheetEntries::class.java)
-                R.id.itmAddDailyGoal -> Intent(this, DailyGoal::class.java)
-                R.id.itmSettings -> {
-                    Toast.makeText(applicationContext, "Open Settings Layout", Toast.LENGTH_SHORT).show()
-                    null
+            when(it.itemId) {
+                R.id.itmAccount -> {intent = Intent(this, AccountDetails::class.java)
+                    startActivity(intent) }
+
+                R.id.itmAnalyticalGraph -> {
+                    intent = Intent(this, AnalyticsGraph::class.java)
+                    startActivity(intent)
                 }
-                R.id.itmLogout -> {
-                    FirebaseAuth.getInstance().signOut()
-                    Intent(this, MainActivity::class.java).also {
-                        finish()
-                        startActivity(it)
-                    }
-                    null
-                }
-                else -> null
+                R.id.itmAddCategory -> {intent = Intent(this, AddCategory::class.java)
+                    startActivity(intent) }
+                R.id.itmAddTimeSheet -> {intent = Intent(this, AddTimesheet::class.java)
+                    startActivity(intent) }
+                R.id.itmDashboard -> {intent = Intent(this, Dashboard::class.java)
+                    startActivity(intent) }
+                R.id.itmViewTimeSheetEntries -> {intent = Intent(this, ViewTimesheetEntries::class.java)
+                    startActivity(intent) }
+                R.id.itmSettings -> Toast.makeText(applicationContext, "Open Settings Layout", Toast.LENGTH_SHORT).show()
+                R.id.itmLogout -> { FirebaseAuth.getInstance().signOut()
+                    intent = Intent(this, MainActivity::class.java)
+                    finish()}
+
             }
-            intent?.let { startActivity(it) }
             true
         }
     }

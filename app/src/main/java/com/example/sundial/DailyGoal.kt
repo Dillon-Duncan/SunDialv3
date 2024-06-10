@@ -91,6 +91,10 @@ class DailyGoal : AppCompatActivity() {
                         intent = Intent(this, Dashboard::class.java)
                         startActivity(intent)
                     }
+                    R.id.itmAnalyticalGraph -> {
+                        intent = Intent(this, AnalyticsGraph::class.java)
+                        startActivity(intent)
+                    }
 
                     R.id.itmViewTimeSheetEntries -> {
                         intent = Intent(this, ViewTimesheetEntries::class.java)
