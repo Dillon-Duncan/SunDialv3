@@ -43,13 +43,13 @@ class AccountDetails : AppCompatActivity() {
         var usernametext = findViewById<EditText>(R.id.edtUsername2).text
         var profilePictext = findViewById<EditText>(R.id.edtDisplayPicURL).text
 
-        /* emailText = email
+        /*emailText = email
         passwordtext = password
         usernametext = username
         profilePictext = profilePic */
 
 
-        /* ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.DrwLayoutAccountDetails)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.DrwLayoutAccountDetails)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -63,7 +63,7 @@ class AccountDetails : AppCompatActivity() {
         drwLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        navView = findViewById(R.id.nav_view_accountdetails)
+        navView = findViewById(R.id.nav_view_accountDetails)
 
         navView.setNavigationItemSelectedListener {
             drwLayout.closeDrawer(GravityCompat.START)
@@ -80,6 +80,11 @@ class AccountDetails : AppCompatActivity() {
 
                 R.id.itmAddTimeSheet -> {
                     intent = Intent(this, AddTimesheet::class.java)
+                    startActivity(intent)
+                }
+
+                R.id.itmAnalyticalGraph -> {
+                    intent = Intent(this, AnalyticsGraph::class.java)
                     startActivity(intent)
                 }
 
@@ -126,8 +131,7 @@ class AccountDetails : AppCompatActivity() {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         toggle.onConfigurationChanged(newConfig)
-    } */
-
     }
+
 
 }

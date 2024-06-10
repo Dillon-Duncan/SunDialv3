@@ -29,10 +29,13 @@
     <item
         android:title="@string/menuDailyGoal">
         <menu >
-
             <item  android:title="@string/toolbarSubAddDailyGoal"
                 android:id="@+id/itmAddDailyGoal"
                 android:icon="@drawable/ic_daily_goal" />
+
+            <item  android:title="@string/menuAnalyticsGraph"
+                android:id="@+id/itmAnalyticalGraph"
+                android:icon="@drawable/ic_analyticalgraph" />
         </menu>
 
     </item>
@@ -50,18 +53,11 @@
             android:title="@string/menuViewEntries"/>
     </menu>
 </item>
-    <item android:title="" android:enabled="false"/>
 <item
     android:id="@+id/itmSettings"
     android:icon="@drawable/ic_settings"
     android:title="@string/menuSettings"/>
-
-    <item android:title="" android:enabled="false"/>
-    <item android:title="" android:enabled="false"/>
-    <item android:title="" android:enabled="false"/>
-
-
-    <item
+<item
     android:id="@+id/itmLogout"
     android:icon="@drawable/ic_logout"
     android:title="@string/menuLogout"/>
