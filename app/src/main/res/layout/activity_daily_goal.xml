@@ -1,10 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/DrwLayoutDailyGoal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DailyGoal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarDailyGoal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/toolbarSubAddDailyGoal"
+            android:textAlignment="center"
+            android:textColor="@color/burnt_siena"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+        <TextView
+            android:id="@+id/txtViewCalender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Day To Enter Daily Goal For"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBarDailyGoal">
+        </TextView>
+
+        <CalendarView
+            android:id="@+id/calView"
+            android:layout_width="325dp"
+            android:layout_height="310dp"
+            android:layout_marginTop="23dp"
+            app:layout_constraintTop_toBottomOf="@id/txtViewCalender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/buff"
+            android:verticalScrollbarPosition="right"
+            android:scrollbarAlwaysDrawHorizontalTrack="true">
+
+        </CalendarView>
+
+        <TextView
+            android:id="@+id/txtMinHours"
+            android:layout_width="286dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="35dp"
+            android:textSize="15sp"
+            android:ems="10"
+            android:textStyle="bold"
+            android:minHeight="48dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="Set Minimum Daily Hours To Work"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calView" />
+
+        <TextView
+            android:id="@+id/sb_progress_min_indicator"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="0"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:background="@color/buff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtMinHours" />
+
+        <SeekBar
+            android:id="@+id/sBarMinHours"
+            android:progressDrawable="@drawable/sb_progress"
+            android:thumb="@drawable/sb_thumb"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:max="12"
+            android:layout_marginTop="5dp"
+            tools:layout_editor_absoluteX="94dp"
+            tools:layout_editor_absoluteY="194dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sb_progress_min_indicator"/>
+
+        <TextView
+            android:id="@+id/txtHint"
+            android:layout_width="285dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:textSize="13sp"
+            android:minHeight="48dp"
+            android:paddingStart="12dp"
+            android:text="The Maximum Hours Cannot Be Less Than \nThen Minimum Hours"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sBarMinHours" />
+
+        <TextView
+            android:id="@+id/txtMaxHours"
+            android:layout_width="286dp"
+            android:layout_height="38dp"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:textStyle="bold"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="Set Maximum Daily Hours To Work"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtHint" />
+
+        <TextView
+            android:id="@+id/sb_progress_max_indicator"
+            android:layout_width="wrap_content"
+            android:text="0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:background="@color/buff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtMaxHours" />
+
+        <SeekBar
+            android:id="@+id/sBarMaxHours"
+            android:progressDrawable="@drawable/sb_progress"
+            android:thumb="@drawable/sb_thumb"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:max="24"
+            tools:layout_editor_absoluteX="94dp"
+            tools:layout_editor_absoluteY="194dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sb_progress_max_indicator" />
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:backgroundTint="@color/burnt_siena"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Confirm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sBarMaxHours" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view_addDailyGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu"
+        />
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

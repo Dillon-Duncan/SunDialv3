@@ -11,16 +11,23 @@
     <string name="log_in3">Log In</string>
     <string name="sign_up3">Sign Up</string>
     <string name="dashboard">Dashboard</string>
-    <string name="username">John Doe</string>
-    <string name="menuMain">Profile</string>
-    <string name="toolbarDashboard" formatted="true">Dashboard</string>
-    <string name="menuDashboard">Dashboard</string>
-    <string name="menuAccount">Account Details</string>
+    <string name="toolbarMain" formatted="true">SunDial</string>
+    <string name="toolbarSubDashboard" formatted="true">Dashboard</string>
+    <string name="toolbarSubAddCategory" formatted="true">Adding Category</string>
+    <string name="toolbarSubAddTimeSheet" formatted="true">Adding Time-Sheet</string>
+    <string name="toolbarSubAddDailyGoal" formatted="true">Adding Daily Goal</string>
+    <string name="toolbarSubViewTimeSheet" formatted="true">Viewing Time-Sheets</string>
+    <string name="toolbarSubAccountDetails" formatted="true">Account Details</string>
+    <string name="nav_header_username">Lemi M</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="btnAddCategory">Add Category</string>
     <string name="btnAddTimeSheet">Add TimeSheet</string>
     <string name="btnRefresh">Refresh</string>
+    <string name="menuDailyGoal">Daily Progress</string>
+    <string name="menuMain">Profile</string>
+    <string name="menuDashboard">Dashboard</string>
+    <string name="menuAccount">Account Details</string>
     <string name="menuCategories">Categories</string>
     <string name="menuAddCategory">Add Time-Sheet Category</string>
     <string name="menuTimeSheet">Time-Sheets</string>
