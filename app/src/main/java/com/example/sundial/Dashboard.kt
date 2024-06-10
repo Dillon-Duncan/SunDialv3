@@ -40,77 +40,77 @@ class Dashboard : AppCompatActivity() {
         userRecyclerView.layoutManager = LinearLayoutManager(this)
         userRecyclerView.setHasFixedSize(true)
 
-        list = arrayListOf<NewTimesheetClass>()
 
-        getUserData()
+        // Initialize data list
+        list = arrayListOf()
+        getUserData()  // Fetch user data
 
-        val buttonClick = findViewById<Button>(R.id.btnAddCategory2)
-        buttonClick.setOnClickListener {
-            val intent = Intent(this, AddCategory::class.java)
-            startActivity(intent)
-        }
+        // Set up button click listeners
+        setupButtonClickListeners()
 
-        val buttonClick2 = findViewById<Button>(R.id.btnAddTimesheet2)
-        buttonClick2.setOnClickListener {
-            val intent2 = Intent(this, AddTimesheet::class.java)
-            startActivity(intent2)
-        }
-
-        val buttonClick3 = findViewById<Button>(R.id.btnRefresh)
-        buttonClick3.setOnClickListener {
-
-        /*    userRecyclerView = findViewById(R.id.timesheetList)
-            userRecyclerView.layoutManager = LinearLayoutManager(this)
-            userRecyclerView.setHasFixedSize(true)
-
-            list = arrayListOf<NewTimesheetClass>()
-
-            getUserData() */
-
-        }
-
-        val toolbar : Toolbar = findViewById(R.id.toolBarDashboard)
+        // Set up the toolbar
+        val toolbar: Toolbar = findViewById(R.id.toolBarDashboard)
         setSupportActionBar(toolbar)
 
+        // Set up DrawerLayout and ActionBarDrawerToggle
+        setupDrawerLayout(toolbar)
+
+        // Set up NavigationView
+        navView = findViewById(R.id.nav_view)
+        setupNavigationView()
+    }
+
+    private fun setupButtonClickListeners() {
+        findViewById<Button>(R.id.btnAddCategory2).setOnClickListener {
+            startActivity(Intent(this, AddCategory::class.java))
+        }
+        findViewById<Button>(R.id.btnAddTimesheet2).setOnClickListener {
+            startActivity(Intent(this, AddTimesheet::class.java))
+        }
+        findViewById<Button>(R.id.btnRefresh).setOnClickListener {
+            refreshUserData()
+        }
+    }
+
+    private fun setupDrawerLayout(toolbar: Toolbar) {
         drwLayout = findViewById(R.id.DrwLayoutDashboard)
         toggle = ActionBarDrawerToggle(this, drwLayout, toolbar, R.string.open, R.string.close)
         drwLayout.addDrawerListener(toggle)
         toggle.syncState()
+    }
 
-        navView = findViewById(R.id.nav_view)
-
-        navView.setNavigationItemSelectedListener {
+    private fun setupNavigationView() {
+        navView.setNavigationItemSelectedListener { menuItem ->
+            drwLayout = findViewById(R.id.DrwLayoutDashboard)
             drwLayout.closeDrawer(GravityCompat.START)
-            when(it.itemId) {
-                R.id.itmAccount -> {intent = Intent(this, AccountDetails::class.java)
-                startActivity(intent) }
-                R.id.itmAddCategory -> {intent = Intent(this, AddCategory::class.java)
-                    startActivity(intent) }
-                R.id.itmAddTimeSheet -> {intent = Intent(this, AddTimesheet::class.java)
-                    startActivity(intent) }
-                R.id.itmDashboard -> {intent = Intent(this, Dashboard::class.java)
-                    startActivity(intent) }
-                R.id.itmViewTimeSheetEntries -> {intent = Intent(this, ViewTimesheetEntries::class.java)
-                    startActivity(intent) }
-                R.id.itmAddDailyGoal -> {
-                    intent = Intent(this, DailyGoal::class.java)
-                    startActivity(intent)
+            val intent: Intent? = when (menuItem.itemId) {
+                R.id.itmAccount -> Intent(this, AccountDetails::class.java)
+                R.id.itmAddCategory -> Intent(this, AddCategory::class.java)
+                R.id.itmAddTimeSheet -> Intent(this, AddTimesheet::class.java)
+                R.id.itmDashboard -> Intent(this, Dashboard::class.java)
+                R.id.itmViewTimeSheetEntries -> Intent(this, ViewTimesheetEntries::class.java)
+                R.id.itmAddDailyGoal -> Intent(this, DailyGoal::class.java)
+                R.id.itmSettings -> {
+                    Toast.makeText(applicationContext, "Open Settings Layout", Toast.LENGTH_SHORT).show()
+                    null
                 }
-                R.id.itmSettings -> Toast.makeText(applicationContext, "Open Settings Layout", Toast.LENGTH_SHORT).show()
-                R.id.itmLogout -> { FirebaseAuth.getInstance().signOut()
-                    intent = Intent(this, MainActivity::class.java)
-                finish()}
-
+                R.id.itmLogout -> {
+                    FirebaseAuth.getInstance().signOut()
+                    Intent(this, MainActivity::class.java).also {
+                        finish()
+                        startActivity(it)
+                    }
+                    null
+                }
+                else -> null
             }
+            intent?.let { startActivity(it) }
             true
         }
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (toggle.onOptionsItemSelected(item)) {
-            true
-        } else {
-            super.onOptionsItemSelected(item)
-        }
+        return if (toggle.onOptionsItemSelected(item)) true else super.onOptionsItemSelected(item)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
@@ -119,34 +119,31 @@ class Dashboard : AppCompatActivity() {
     }
 
     private fun getUserData() {
-
         database = FirebaseDatabase.getInstance().getReference("test category")
-
         database.addValueEventListener(object : ValueEventListener {
-
             override fun onDataChange(snapshot: DataSnapshot) {
-
                 if (snapshot.exists()) {
-
+                    list.clear()  // Clear the list
                     for (userSnapshot in snapshot.children) {
-
                         val timesheet = userSnapshot.getValue(NewTimesheetClass::class.java)
-                        list.add(timesheet!!)
-
+                        timesheet?.let { list.add(it) }
                     }
-
                     userRecyclerView.adapter = ListAdapterNew(list)
-
                 }
-
-
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
                 // Handle error
+                Toast.makeText(this@Dashboard, "Failed to load data: ${databaseError.message}", Toast.LENGTH_SHORT).show()
             }
         })
+    }
 
+    private fun refreshUserData() {
+        list.clear()
+        getUserData()
+        // Optionally notify the adapter of data change if needed
+        userRecyclerView.adapter?.notifyDataSetChanged()
     }
 
 }

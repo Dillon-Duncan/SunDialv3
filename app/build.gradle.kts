@@ -9,7 +9,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.sundial"
+        applicationId = "com.new.student.sundial"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
