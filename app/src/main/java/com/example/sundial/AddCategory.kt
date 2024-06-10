@@ -34,15 +34,19 @@ class AddCategory : AppCompatActivity() {
 
         val buttonClick = findViewById<Button>(R.id.btnAddCategory)
         buttonClick.setOnClickListener {
-
-            val category: String = findViewById<EditText>(R.id.edtAddCategory).text.toString()
-
-            val myRef = database.getReference(category)
-
-            myRef.setValue("new category")
-
-            val intent = Intent(this, Dashboard::class.java)
-            startActivity(intent)
+            val category = findViewById<EditText>(R.id.edtAddCategory).text.toString().trim()
+            if (category.isNotEmpty()) {
+                val myRef = database.getReference(category)
+                myRef.setValue("new category").addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        startActivity(Intent(this, Dashboard::class.java))
+                    } else {
+                        Toast.makeText(this, "Failed to add category", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } else {
+                Toast.makeText(this, "Category name cannot be empty", Toast.LENGTH_SHORT).show()
+            }
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.DrwLayoutAddCategory)) { v, insets ->
@@ -51,48 +55,36 @@ class AddCategory : AppCompatActivity() {
             insets
         }
 
-        val toolbar : Toolbar = findViewById(R.id.toolBarAddCategory)
+        val toolbar: Toolbar = findViewById(R.id.toolBarAddCategory)
         setSupportActionBar(toolbar)
 
-        drwLayout = findViewById(R.id.DrwLayoutAddCategory)
-        toggle = ActionBarDrawerToggle(this, drwLayout, toolbar, R.string.open, R.string.close)
+        val drwLayout = findViewById<DrawerLayout>(R.id.DrwLayoutAddCategory)
+        val toggle = ActionBarDrawerToggle(this, drwLayout, toolbar, R.string.open, R.string.close)
         drwLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        navView = findViewById(R.id.nav_view_addCategory)
-
+        val navView = findViewById<NavigationView>(R.id.nav_view_addCategory)
         navView.setNavigationItemSelectedListener {
-            drwLayout.closeDrawer(GravityCompat.START)
-            when(it.itemId) {
-                R.id.itmAccount -> {intent = Intent(this, AccountDetails::class.java)
-                    startActivity(intent) }
-                R.id.itmAddCategory -> {intent = Intent(this, AddCategory::class.java)
-                    startActivity(intent) }
-                R.id.itmAddTimeSheet -> {intent = Intent(this, AddTimesheet::class.java)
-                    startActivity(intent) }
-                R.id.itmDashboard -> {intent = Intent(this, Dashboard::class.java)
-                    startActivity(intent) }
-                R.id.itmAddDailyGoal -> {
-                    intent = Intent(this, DailyGoal::class.java)
-                    startActivity(intent)
-                }
-                R.id.itmViewTimeSheetEntries -> {intent = Intent(this, ViewTimesheetEntries::class.java)
-                    startActivity(intent) }
+            var intent: Intent? = null
+            when (it.itemId) {
+                R.id.itmAddCategory -> intent = Intent(this, AddCategory::class.java)
+                R.id.itmAddTimeSheet -> intent = Intent(this, AddTimesheet::class.java)
+                R.id.itmDashboard -> intent = Intent(this, Dashboard::class.java)
+                R.id.itmViewTimeSheetEntries -> intent = Intent(this, ViewTimesheetEntries::class.java)
                 R.id.itmSettings -> Toast.makeText(applicationContext, "Open Settings Layout", Toast.LENGTH_SHORT).show()
-                R.id.itmLogout -> { FirebaseAuth.getInstance().signOut()
+                R.id.itmLogout -> {
+                    FirebaseAuth.getInstance().signOut()
                     intent = Intent(this, MainActivity::class.java)
-                    finish()}
-
+                    finish()
+                }
             }
+            intent?.let { startActivity(it) }
             true
         }
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (toggle.onOptionsItemSelected(item)) {
-            true
-        } else {
-            super.onOptionsItemSelected(item)
-        }
+        return if (toggle.onOptionsItemSelected(item)) true else super.onOptionsItemSelected(item)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
