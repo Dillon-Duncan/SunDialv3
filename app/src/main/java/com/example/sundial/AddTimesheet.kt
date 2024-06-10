@@ -43,7 +43,7 @@ class AddTimesheet : AppCompatActivity() {
             val category: String = findViewById<EditText>(R.id.edtCategory).text.toString()
             val imageURL: String = findViewById<EditText>(R.id.edtImageURL).text.toString()
 
-            val timesheet : TimesheetClass = TimesheetClass(date,startTime,endTime,description,category,imageURL)
+            val timesheet : NewTimesheetClass = NewTimesheetClass(date,startTime,endTime,description,category,imageURL)
 
             val myRef = database.getReference(category).push()
 

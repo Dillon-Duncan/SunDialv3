@@ -16,7 +16,14 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.Firebase
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.database
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class DailyGoal : AppCompatActivity() {
 
@@ -35,6 +42,22 @@ class DailyGoal : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_daily_goal)
+
+        val dailyGoalsList: MutableList<DailyGoalsClass> = mutableListOf()
+
+        FirebaseApp.initializeApp(this)
+
+        val buttonClick = findViewById<Button>(R.id.btnConfirm)
+        buttonClick.setOnClickListener {
+            val date = "2024-10-6"
+            val minHours = sBarMin.progress
+            val maxHours = sBarMax.progress
+            val hoursCompleted = 0
+            val newGoal = DailyGoalsClass(minHours, maxHours, hoursCompleted)
+            dailyGoalsList.add(newGoal)
+            Toast.makeText(this, "Goal added locally!", Toast.LENGTH_SHORT).show()
+            storeData(date, minHours, maxHours, hoursCompleted)
+        }
 
             val toolbar: Toolbar = findViewById(R.id.toolBarDailyGoal)
             setSupportActionBar(toolbar)
@@ -146,7 +169,24 @@ class DailyGoal : AppCompatActivity() {
             toggle.onConfigurationChanged(newConfig)
         }
 
-        //private fun storeData(){
+    private fun storeData(date: String, minHours: Int, maxHours: Int, hoursCompleted: Int) {
+        val database = FirebaseDatabase.getInstance().reference
+
+        val myRef = database.child(date).push()
+
+        val dailyGoalData = DailyGoalsClass(minHours, maxHours, hoursCompleted)
+        myRef.setValue(dailyGoalData)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Data stored successfully!", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Failed to store data: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+
+
+    //private fun storeData(){
           //   btnConfirm = findViewById(R.id.btnConfirm)
           //  calDailyGoal = findViewById(R.id.calView)
           //  btnConfirm.setOnClickListener{
